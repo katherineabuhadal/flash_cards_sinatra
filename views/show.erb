@@ -1,0 +1,16 @@
+<h1><%= @deck.name %></h2>
+	<form method="POST" action="/decks/<%= @deck_id %>">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete">
+	</form>
+		<h2><a href="/decks/<%= @deck_id %>/cards/new">Add a new card</a></h2>
+
+	<div>
+		<% @cards.sample do |card| %>
+			<h3>Description: <%= card.question %></h3>
+			<% end %>
+		
+		
+		
+
+	</div>
