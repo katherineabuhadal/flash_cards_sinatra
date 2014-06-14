@@ -10,9 +10,11 @@
 	<div id="container">
 		<h1>Flash Cards Game</h1>
 		<div id="introduction">Introduction</div>
+
+		
 		<h2>Decks</h2>
 		<div id="decks">
-			<p><a href="/decks/new">Make a new deck</a></p>
+			<p><a href="/new_deck">Make a new deck</a></p>
 			<ul>
 				<% @decks.each do |deck| %>
 			<li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>

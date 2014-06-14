@@ -1,16 +1,28 @@
 <h1><%= @deck.name %></h2>
-	<form method="POST" action="/decks/<%= @deck_id %>">
+
+	<form method="POST" action="/decks/<%= @deck.id %>">
 		<input type="hidden" name="_method" value="DELETE">
 		<input type="submit" value="Delete">
 	</form>
-		<h2><a href="/decks/<%= @deck_id %>/cards/new">Add a new card</a></h2>
 
+		<h2><a href="/cards/<%= @deck.id %>/edit">Add a new card</a></h2>
+		<h2><a href="/play">Play</a></h2>
 	<div>
-		<% @cards.sample do |card| %>
-			<h3>Description: <%= card.question %></h3>
-			<% end %>
-		
-		
+	
 		
 
 	</div>
+
+
+
+	<!-- Not working 
+	<!-- Not working 	<form method="POST" action="/"> 
+	<!-- Not working 		<label for="answer">Answer:</label>
+	<!-- Not working <input id="answer" type="text" name="card[answer]">
+	<!-- Not working 		<input type="submit" value="Submit">
+	<!-- Not working 	</form> 
+	
+
+-->
+
+
