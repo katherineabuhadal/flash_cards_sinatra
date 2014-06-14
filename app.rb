@@ -41,11 +41,20 @@ get "/cards/:id/edit" do
 	erb :new_card
 end
 
-post "/cards" do
-	card = Card.create(params[:card])
-	redirect "/cards/#{card.id}"
-	
+get "/cards/:deck_id" do
+	@deck = Deck.find(params[:deck_id])
+	erb :show_cards
 end
+
+post "/cards/:deck_id" do
+	deck = Deck.find(params[:deck_id])
+	deck.cards.create(params[:card])
+	redirect "/cards/#{deck.id}"
+
+end
+
+
+
 
 delete "/decks/:id" do
 	deck = Deck.find(params[:id]) 
