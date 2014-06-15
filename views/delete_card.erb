@@ -1,6 +1,15 @@
 	<body>
 		<h2>Delete Card</h2>
 
+		<form method="POST" action="/cards/<%= @deck.id %>/edit/<%= @card.id %>">
+			<input type="hidden" name="_method" value="DELETE">
+			<input type="submit" value="Delete Card">
+		</form>
+				
+				<p>Question: <%= @card.question %></p>
+				<p>Answer: <%= @card.answer %></p>
+
+			
 			
 	</body>
 

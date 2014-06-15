@@ -44,7 +44,8 @@ end
 
 get "/cards/:deck_id/edit/:card_id" do
 	@deck = Deck.find(params[:deck_id])
-	@card = Card.where(deck_id: @deck.id)
+	@card = Card.find(params[:card_id])
+	
 	erb :delete_card
 end
 
