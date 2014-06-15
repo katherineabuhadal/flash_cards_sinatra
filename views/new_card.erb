@@ -18,6 +18,7 @@
 			</form>
 
 			<% @cards.each do |card| %>
+				<a href="/cards/<%= @deck.id %>/edit/<%= card.id %>">Delete card</a>
 				<p>Question: <%= card.question %></p>
 				<p>Answer: <%= card.answer %></p>
 

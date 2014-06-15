@@ -42,6 +42,13 @@ post "/decks" do
 	redirect "/decks/#{deck.id}"
 end
 
+get "/cards/:deck_id/edit/:card_id" do
+	@deck = Deck.find(params[:deck_id])
+	@card = Card.where(deck_id: @deck.id)
+	erb :delete_card
+end
+
+
 get "/cards/:id/edit" do
 	@deck = Deck.find(params[:id])
 	@cards = Card.where(deck_id: @deck.id)
