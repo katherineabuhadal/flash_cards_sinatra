@@ -10,7 +10,7 @@ class Card < ActiveRecord::Base
 end
 
 class Deck < ActiveRecord::Base
-	has_many :cards
+	has_many :cards, dependent: :destroy
 end
 
 get "/" do
@@ -72,6 +72,13 @@ delete "/decks/:id" do
 	deck.destroy
 
 	redirect "/"
+end
+
+delete "/cards/:deck_id/edit/:card_id" do
+	deck = Deck.find(params[:deck_id])
+	card = Card.find(params[:card_id])
+	card.destroy
+	redirect "/cards/#{deck.id}/edit"
 end
 
 
