@@ -1,11 +1,16 @@
-<h1><%= @deck.name %></h2>
+<!DOCTYPE html>
+<!--Show Cards Page-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/application.css">
+		<title>Show Cards</title>
+	</head>
+	<body>
+		<h1><%= @deck.name %></h2>
 
-	
+			<h2><a href="/cards/<%= @deck.id %>/edit">Add a new card</a></h2>
+			<h2><a href="/play">Plays</a></h2>
+			<p><%= @cards.question</p>
 
-		<h2><a href="/cards/<%= @deck.id %>/edit">Add a new card</a></h2>
-		<h2><a href="/play">Play</a></h2>
-	<div>
-	
-		
-
-	</div>
+	</body>

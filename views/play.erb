@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--Play the game-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/application.css">
+		<title>Play the game</title>
+	</head>
+<body>
+	<h2><%= @deck.name %></h2>
+
+	<p>Question: <% if @card.question != "" %>
+		<%= @card.question %>
+		<% else %>
+		<% 5 %>	
+		<% end %>
+	</p>
+</body>

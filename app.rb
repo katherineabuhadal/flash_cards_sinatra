@@ -22,6 +22,13 @@ get "/new_deck" do
 	erb :new_deck
 end
 
+get "/decks/:id/play" do
+	@deck = Deck.find(params[:id])
+	@card = Card.where(deck_id: @deck.id).sample
+
+	erb :play
+end
+
 get "/decks/:id" do
 	@deck = Deck.find(params[:id])
 	@card = Card.where(deck_id: @deck.id).sample
@@ -49,12 +56,8 @@ end
 post "/cards/:deck_id" do
 	deck = Deck.find(params[:deck_id])
 	deck.cards.create(params[:card])
-	redirect "/cards/#{deck.id}"
-
+	redirect "/cards/#{deck.id}/edit"
 end
-
-
-
 
 delete "/decks/:id" do
 	deck = Deck.find(params[:id]) 
@@ -62,6 +65,10 @@ delete "/decks/:id" do
 
 	redirect "/"
 end
+
+
+
+
 
 
 

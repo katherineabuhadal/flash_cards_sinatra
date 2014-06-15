@@ -1,10 +1,26 @@
-<h3>New cards</h3>
-		<form method="POST" action="/cards/<%= @deck.id %>">
-			<label for="card_question">Card Question</label>
-			<input id="card_question" input type="text" name ="card[question]">
-	
-			<label for="card_answer">Card Answer</label>
-			<input id="card_answer" input type="text" name ="card[answer]">
-			<input type="submit" value="Submit">	
-		</form>
-			
+<!DOCTYPE html>
+<!--Make a new card-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/application.css">
+		<title>Edit Cards</title>
+	</head>
+	<body>
+		<h2>New cards</h2>
+			<form method="POST" action="/cards/<%= @deck.id %>">
+				<label for="card_question">Card Question</label>
+				<input id="card_question" input type="text" name ="card[question]">
+		
+				<label for="card_answer">Card Answer</label>
+				<input id="card_answer" input type="text" name ="card[answer]">
+				<input type="submit" value="Submit">	
+			</form>
+
+			<% @cards.each do |card| %>
+				<p>Question: <%= card.question %></p>
+				<p>Answer: <%= card.answer %></p>
+
+				<% end %>
+				
+	</body>

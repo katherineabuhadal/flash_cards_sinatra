@@ -1,28 +1,23 @@
-<h1><%= @deck.name %></h2>
+<!DOCTYPE html>
+<!--Show Card-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/application.css">
+		<title>Decks</title>
+	</head>
+	<body>
+		<h1><%= @deck.name %></h2>
+		<h2><a href="/decks/<%= @deck.id %>/play">Play</a></h2>
+		<h3><a href="/cards/<%= @deck.id %>/edit">Edit card deck</a></h3>	
 
-	<form method="POST" action="/decks/<%= @deck.id %>">
-		<input type="hidden" name="_method" value="DELETE">
-		<input type="submit" value="Delete">
-	</form>
-
-		<h2><a href="/cards/<%= @deck.id %>/edit">Add a new card</a></h2>
-		<h2><a href="/play">Play</a></h2>
-	<div>
-	
+		<form method="POST" action="/decks/<%= @deck.id %>">
+			<input type="hidden" name="_method" value="DELETE">
+			<input type="submit" value="Delete <%= @deck.name %>Deck">
+		</form>
+	</body>
 		
 
-	</div>
 
-
-
-	<!-- Not working 
-	<!-- Not working 	<form method="POST" action="/"> 
-	<!-- Not working 		<label for="answer">Answer:</label>
-	<!-- Not working <input id="answer" type="text" name="card[answer]">
-	<!-- Not working 		<input type="submit" value="Submit">
-	<!-- Not working 	</form> 
-	
-
--->
 
 
